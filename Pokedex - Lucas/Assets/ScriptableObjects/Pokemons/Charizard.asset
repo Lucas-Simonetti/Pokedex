@@ -13,10 +13,11 @@ MonoBehaviour:
   m_Name: Charizard
   m_EditorClassIdentifier: 
   nome: Charizard
+  descricao: "Drag\xE3o de Fogo"
+  imagemPokemon: {fileID: 21300000, guid: 7f520cfc0dfc59943a9fbf6cdc2198e5, type: 3}
   tipo: {fileID: 11400000, guid: 9de0cc5ff53ef2344a9983b2e15caf72, type: 2}
   habilidade:
   - {fileID: 11400000, guid: 52afef977bc8bc74f9b95646278daacc, type: 2}
   - {fileID: 11400000, guid: 21bc8ffdfd2caad4fa461cd9cc4551ab, type: 2}
   evolucao: {fileID: 0}
   preEvolucao: {fileID: 11400000, guid: 70d5f108fca87d64baeb399502def3f6, type: 2}
-  descricao: "Drag\xE3o de Fogo"
