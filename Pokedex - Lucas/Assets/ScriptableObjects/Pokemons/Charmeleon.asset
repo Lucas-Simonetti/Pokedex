@@ -13,10 +13,12 @@ MonoBehaviour:
   m_Name: Charmeleon
   m_EditorClassIdentifier: 
   nome: Charmeleon
-  tipo: {fileID: 11400000, guid: 9de0cc5ff53ef2344a9983b2e15caf72, type: 2}
+  descricao: Lagarto maior de fogo
+  imagemPokemon: {fileID: 21300000, guid: af85af10c6f7ff240aba0f939c51b8cc, type: 3}
+  tipo:
+  - {fileID: 11400000, guid: 9de0cc5ff53ef2344a9983b2e15caf72, type: 2}
   habilidade:
   - {fileID: 11400000, guid: 52afef977bc8bc74f9b95646278daacc, type: 2}
   - {fileID: 11400000, guid: 21bc8ffdfd2caad4fa461cd9cc4551ab, type: 2}
   evolucao: {fileID: 11400000, guid: 4014c939fd58e6749ad14a845d7fcd19, type: 2}
   preEvolucao: {fileID: 11400000, guid: 0f3805726e877394989181237b03fc0e, type: 2}
-  descricao: Lagarto maior de fogo

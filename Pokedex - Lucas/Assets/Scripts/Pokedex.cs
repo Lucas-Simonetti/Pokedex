@@ -6,35 +6,110 @@ using TMPro;
 
 public class Pokedex : MonoBehaviour
 {
+    [Header("Lista de Pokemon")]
+    public Pokemon[] listaPokemons;
 
-    public Pokemon[] pokemons;
+    [Header("Objetos da Cena Pokedex")]
+    public Image imagemPokemon;
+    public TMP_Text nomePokemon;
+    public TMP_Text descricaoPokemon;
+    public TMP_Text tipoPokemon;
 
-    public Image background;
-    public TMP_Text textoPokedex;
+    [Header("Objetos da Cena Habilidades")]
+    public TMP_Text textoHabilidades;
 
-    // Start is called before the first frame update
-    void Start()
+    [Header("Objetos da Cena Evoluções")]
+    public TMP_Text textoEvolucoes;
+
+    [Header("Variáveis para Pokedex")]
+    public int pokemonAtual;
+
+    private void Start()
     {
         MudarPokemon(0);
     }
 
-    public void MudarPokemon(int valor)
+    public void MudarPokemon(int proximo)
     {
-        int atual = 0;
-        atual += valor;
-        if(atual > pokemons.Length)
+        if(proximo == 0)
         {
-            atual = 0;
+            imagemPokemon.sprite = listaPokemons[pokemonAtual].imagemPokemon;
+            nomePokemon.text = listaPokemons[pokemonAtual].nome;
+            descricaoPokemon.text = listaPokemons[pokemonAtual].descricao;
+
+            for (int i = 0; i < listaPokemons[pokemonAtual].tipo.Length; i++)
+            {
+                tipoPokemon.text += listaPokemons[pokemonAtual].tipo[i].nome + " - ";
+            }
+
+            for (int i = 0; i < listaPokemons[pokemonAtual].habilidade.Length; i++)
+            {
+                textoHabilidades.text += listaPokemons[pokemonAtual].habilidade[i].nome + "\n";
+            }
+
+            if (listaPokemons[pokemonAtual].preEvolucao != null)
+            {
+                textoEvolucoes.text = "Pre: " + listaPokemons[pokemonAtual].preEvolucao.nome;
+            }
+            else
+            {
+                textoEvolucoes.text = "Pre: Não Possui";
+            }
+
+            if (listaPokemons[pokemonAtual].evolucao != null)
+            {
+                textoEvolucoes.text += "\n Pós: " + listaPokemons[pokemonAtual].evolucao.nome;
+            }
+            else
+            {
+                textoEvolucoes.text += "\n Pós: Não possui";
+            }
         }
-        if(atual < 0)
+        else
         {
-            atual = pokemons.Length - 1;
+            pokemonAtual += proximo;
+
+            if(pokemonAtual < 0)
+            {
+                pokemonAtual = listaPokemons.Length - 1;
+            }
+            if(pokemonAtual > listaPokemons.Length)
+            {
+                pokemonAtual = 0;
+            }
+
+            imagemPokemon.sprite = listaPokemons[pokemonAtual].imagemPokemon;
+            nomePokemon.text = listaPokemons[pokemonAtual].nome;
+            descricaoPokemon.text = listaPokemons[pokemonAtual].descricao;
+
+            for (int i = 0; i < listaPokemons[pokemonAtual].tipo.Length; i++)
+            {
+                tipoPokemon.text += listaPokemons[pokemonAtual].tipo[i].nome + " - ";
+            }
+
+            for (int i = 0; i < listaPokemons[pokemonAtual].habilidade.Length; i++)
+            {
+                textoHabilidades.text += listaPokemons[pokemonAtual].habilidade[i].nome + "\n";
+            }
+
+            if (listaPokemons[pokemonAtual].preEvolucao != null)
+            {
+                textoEvolucoes.text = "Pre: " + listaPokemons[pokemonAtual].preEvolucao.nome;
+            }
+            else
+            {
+                textoEvolucoes.text = "Pre: Não Possui";
+            }
+
+            if (listaPokemons[pokemonAtual].evolucao != null)
+            {
+                textoEvolucoes.text += "\n Pós: " + listaPokemons[pokemonAtual].evolucao.nome;
+            }
+            else
+            {
+                textoEvolucoes.text += "\n Pós: Não possui";
+            }
+
         }
-
-        textoPokedex.text = pokemons[atual].nome + "\n Descrição: " + pokemons[atual].descricao + 
-            "\n Tipo: " + pokemons[atual].tipo.nome;
-
-        background.color = pokemons[atual].tipo.tipoCor;
     }
-
 }

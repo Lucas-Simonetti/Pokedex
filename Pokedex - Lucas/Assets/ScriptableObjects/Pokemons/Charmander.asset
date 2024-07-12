@@ -13,10 +13,12 @@ MonoBehaviour:
   m_Name: Charmander
   m_EditorClassIdentifier: 
   nome: Charmander
-  tipo: {fileID: 11400000, guid: 9de0cc5ff53ef2344a9983b2e15caf72, type: 2}
+  descricao: Lagarto de fogo
+  imagemPokemon: {fileID: 21300000, guid: ca4a297713a12b54481b5e2395f20c70, type: 3}
+  tipo:
+  - {fileID: 11400000, guid: 9de0cc5ff53ef2344a9983b2e15caf72, type: 2}
   habilidade:
   - {fileID: 11400000, guid: 52afef977bc8bc74f9b95646278daacc, type: 2}
   - {fileID: 11400000, guid: 21bc8ffdfd2caad4fa461cd9cc4551ab, type: 2}
   evolucao: {fileID: 11400000, guid: 70d5f108fca87d64baeb399502def3f6, type: 2}
   preEvolucao: {fileID: 0}
-  descricao: Lagarto de fogo
